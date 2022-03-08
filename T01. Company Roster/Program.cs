@@ -26,15 +26,14 @@ namespace T01._Company_Roster
 
         public string DepartmentName { get; set; }
 
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public List<Employee> ListOfEmployees { get; set; } = new List<Employee>();
 
         public decimal TotalSalaries { get; set; }
 
-        public void AddNewEmployee(string empName, decimal empSalary)
+        public void AddEmployee(string name, decimal salary)
         {
-            this.TotalSalaries += empSalary;
-
-            this.Employees.Add(new Employee(empName, empSalary));
+            this.TotalSalaries += salary;
+            this.ListOfEmployees.Add(new Employee (name, salary));
         }
     }
 
@@ -42,33 +41,36 @@ namespace T01._Company_Roster
     {
         static void Main()
         {
-            List<Department> departments = new List<Department>();
+            List<Department> allDepartments = new List<Department>();
 
-            int numberOfEmployees = int.Parse(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < numberOfEmployees; i++)
+            for (int i = 0; i < n; i++)
             {
-                string[] inputArr = Console.ReadLine().Split();
+                // Peter 120.00 Development
 
-                if (!departments.Any(d => d.DepartmentName == inputArr[2]))
+                string[] currEmployeeData = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                string name = currEmployeeData[0];
+                decimal salary = decimal.Parse(currEmployeeData[1]);
+                string currDep = currEmployeeData[2];
+
+                if (!allDepartments.Any(x => x.DepartmentName == currDep))
                 {
-                    departments.Add(new Department(inputArr[2]));
+                    allDepartments.Add(new Department(currDep));
                 }
 
-                departments.Find(d => d.DepartmentName == inputArr[2]).AddNewEmployee(inputArr[0], decimal.Parse(inputArr[1]));
+                allDepartments.Find(d => d.DepartmentName == currDep).AddEmployee(name, salary);
             }
 
-            Department bestDepartment = departments.OrderByDescending(d => d.TotalSalaries / d.Employees.Count()).First();
+            Department bestDepartment = allDepartments.OrderByDescending(d => d.TotalSalaries / d.ListOfEmployees.Count).First();
 
             Console.WriteLine($"Highest Average Salary: {bestDepartment.DepartmentName}");
 
-            foreach (var employee in bestDepartment.Employees.OrderByDescending(e => e.Salary))
+            foreach (Employee employee in bestDepartment.ListOfEmployees.OrderByDescending(x => x.Salary))
             {
-                Console.WriteLine($"{employee.Name} {employee.Salary:F2}");
+                Console.WriteLine($"{employee.Name} {employee.Salary:f2}");
             }
-
         }
     }
-
-
 }

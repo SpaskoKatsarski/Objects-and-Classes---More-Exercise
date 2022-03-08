@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T01. Company Roster", "T01. Company Roster\T01. Company Roster.csproj", "{07ED636E-535C-437D-A6AB-8380F8116AB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T01. Company Roster", "T01. Company Roster\T01. Company Roster.csproj", "{07ED636E-535C-437D-A6AB-8380F8116AB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T02. Oldest Family Member", "T02. Oldest Family Member\T02. Oldest Family Member.csproj", "{A604719A-577A-494B-A4AE-420702E206A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T02. Oldest Family Member", "T02. Oldest Family Member\T02. Oldest Family Member.csproj", "{A604719A-577A-494B-A4AE-420702E206A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T03. Speed Racing", "T03. Speed Racing\T03. Speed Racing.csproj", "{7107ACA0-E38C-4ED3-A08C-533F33F15912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A604719A-577A-494B-A4AE-420702E206A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A604719A-577A-494B-A4AE-420702E206A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A604719A-577A-494B-A4AE-420702E206A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7107ACA0-E38C-4ED3-A08C-533F33F15912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7107ACA0-E38C-4ED3-A08C-533F33F15912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7107ACA0-E38C-4ED3-A08C-533F33F15912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7107ACA0-E38C-4ED3-A08C-533F33F15912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
