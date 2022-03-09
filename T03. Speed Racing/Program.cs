@@ -79,6 +79,11 @@ namespace T03._Speed_Racing
                 }
                 // Continue....
             }
+
+            foreach (Car car in cars)
+            {
+                Console.WriteLine($"{car.Model} {car.FuelAmount:f2} {car.TraveledDistance}");
+            }   
         }
     }
 }
